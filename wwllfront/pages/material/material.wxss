@@ -1,0 +1,227 @@
+/* 整体容器 */
+.container {
+  padding: 20rpx;
+  background-color: #f9f9f9; /* 整体背景色 */
+}
+
+/* 顶部导航栏 */
+.navbar {
+  height: 80rpx;
+  background-color: #333; /* 导航栏背景色 */
+  color: #fff; /* 导航栏文字颜色 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2rpx 4rpx rgba(0, 0, 0, 0.1); /* 导航栏阴影 */
+}
+
+.navbar-title {
+  font-size: 36rpx; /* 增大导航栏标题字体 */
+  font-weight: bold;
+}
+
+/* 搜索框 */
+.search-box {
+  display: flex;
+  margin-top: 20rpx;
+  align-items: center; /* 搜索框内部元素垂直居中 */
+}
+
+.search-box input {
+  flex: 1;
+  border: 1rpx solid #ccc;
+  padding: 12rpx; /* 增大输入框内边距 */
+  border-radius: 8rpx; /* 增大输入框圆角 */
+  font-size: 28rpx; /* 增大输入框字体 */
+}
+
+.search-box button {
+  margin-left: 20rpx;
+  padding: 12rpx 24rpx; /* 增大按钮内边距 */
+  background-color: #007aff;
+  color: #fff;
+  border-radius: 8rpx; /* 增大按钮圆角 */
+  font-size: 28rpx; /* 增大按钮字体 */
+}
+
+/* 材料列表 */
+.material-list {
+  margin-top: 20rpx;
+  background-color: #fff; /* 列表背景色 */
+  border-radius: 8rpx; /* 列表圆角 */
+  box-shadow: 0 2rpx 4rpx rgba(0, 0, 0, 0.1); /* 列表阴影 */
+  overflow: hidden; /* 隐藏溢出部分 */
+  width: 90%; /* 固定列表宽度，可根据需要调整 */
+  margin-left: auto;
+  margin-right: auto; /* 使列表居中显示 */
+}
+
+/* 设置表头容器为 flex 布局 */
+.list-header {
+  display: flex;
+  width: 100%;
+  border-bottom: 1px solid #ccc;
+  padding: 10px 0;
+  box-sizing: border-box;
+}
+
+/* 每个 header 项占 20% */
+.header-item {
+  width: 20%;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  white-space: nowrap;  /* 增加此行防止文字换行 */
+}
+
+/* 如果你表头中直接有 <text> 标签也需要设置样式 */
+.list-header text {
+  width: 20%;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.list-item {
+  display: flex;
+  padding: 15rpx 0; /* 增大列表项内边距 */
+  border-bottom: 1rpx solid #eee;
+}
+
+.list-item text {
+  width: 20%; /* 假设 5 列，每列占 20%，可根据实际列数调整 */
+  padding: 0 20rpx; 
+  text-align: center; /* 列表项文字水平居中 */
+  font-size: 28rpx; /* 增大列表项字体 */
+  display: flex;
+  align-items: center;
+  justify-content: center; /* 列表项文字垂直居中 */
+}
+
+.list-item text:last-child::after {
+  content: "元"; /* 在价格后面添加"元" */
+  margin-left: 5rpx; /* "元"与价格的间距 */
+}
+
+.item-actions {
+  display: flex;
+  justify-content: center; /* 操作按钮水平居中 */
+  width: 20%; /* 操作按钮所在单元格宽度 */
+  padding: 0 10rpx; /* 减少内边距 */
+  align-items: center; /* 操作按钮垂直居中 */
+}
+
+.item-actions button {
+  width: auto; /* 让按钮宽度自适应内容 */
+  min-width: 80rpx; /* 设置最小宽度，避免过窄 */
+  margin-left: 10rpx;
+  padding: 8rpx 16rpx; /* 调整操作按钮内边距 */
+  background-color: #05c697;
+  color: #fff;
+  border-radius: 8rpx; /* 增大操作按钮圆角 */
+  font-size: 28rpx; /* 增大操作按钮字体 */
+  white-space: nowrap; /* 防止按钮文字换行 */
+  display: flex;
+  align-items: center;
+  justify-content: center; /* 按钮文字水平和垂直居中 */
+}
+
+/* 操作按钮区 */
+.action-buttons {
+  margin-top: 30rpx; /* 增大操作按钮区与上方的间距 */
+  display: flex;
+  justify-content: space-around; /* 操作按钮均匀分布 */
+}
+
+.action-buttons button {
+  padding: 12rpx 24rpx; /* 增大操作按钮内边距 */
+  background-color: #007aff;
+  color: #fff;
+  border-radius: 8rpx; /* 增大操作按钮圆角 */
+  font-size: 30rpx; /* 增大操作按钮字体 */
+  display: flex;
+  align-items: center;
+  justify-content: center; /* 按钮文字水平和垂直居中 */
+}
+
+/* 模态框遮罩层 */
+.modal-mask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6); /* 加深遮罩层透明度 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 模态框容器 */
+.modal-container {
+  background-color: #fff;
+  border-radius: 12rpx; /* 增大模态框圆角 */
+  padding: 30rpx; /* 增大模态框内边距 */
+  width: 80%;
+  box-shadow: 0 4rpx 8rpx rgba(0, 0, 0, 0.2); /* 模态框阴影 */
+}
+
+.modal-title {
+  font-size: 36rpx; /* 增大模态框标题字体 */
+  font-weight: bold;
+  margin-bottom: 20rpx; /* 增大模态框标题与下方元素的间距 */
+  text-align: center; /* 模态框标题水平居中 */
+  display: flex;
+  align-items: center;
+  justify-content: center; /* 模态框标题垂直居中 */
+}
+
+.modal-container input {
+  border: 1rpx solid #ccc;
+  padding: 12rpx; /* 增大模态框输入框内边距 */
+  border-radius: 8rpx; /* 增大模态框输入框圆角 */
+  margin-bottom: 20rpx;
+  font-size: 28rpx; /* 增大模态框输入框字体 */
+}
+
+.modal-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30rpx; /* 增大模态框按钮与上方元素的间距 */
+}
+
+.modal-buttons button {
+  padding: 12rpx 24rpx; /* 增大模态框按钮内边距 */
+  background-color: #007aff;
+  color: #fff;
+  border-radius: 8rpx; /* 增大模态框按钮圆角 */
+  font-size: 30rpx; /* 增大模态框按钮字体 */
+  display: flex;
+  align-items: center;
+  justify-content: center; /* 按钮文字水平和垂直居中 */
+}
+
+/* 新增/编辑对话框中输入项样式 */
+.input-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20rpx;
+}
+
+.input-label {
+  width: 30%;         /* 标签占30%宽度，可根据实际情况调整 */
+  font-size: 28rpx;
+  color: #333;
+  padding-right: 10rpx;
+  text-align: right;
+}
+
+.input-item input {
+  flex: 1;
+  border: 1rpx solid #ccc;
+  padding: 12rpx;
+  border-radius: 8rpx;
+  font-size: 28rpx;
+}

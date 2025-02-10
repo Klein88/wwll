@@ -1,0 +1,47 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/quote/quote",
+    "pages/order/order",
+    "pages/material/material"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "伟伟拉链",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#000000",
+    "selectedColor": "#54a0ff",
+    "backgroundColor": "#FFFFFF",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "assets/home.png",
+        "selectedIconPath": "assets/home-active.png"
+      },
+      {
+        "pagePath": "pages/quote/quote",
+        "text": "报价",
+        "iconPath": "assets/stats.png",
+        "selectedIconPath": "assets/stats-active.png"
+      },
+      {
+        "pagePath": "pages/order/order",
+        "text": "订单",
+        "iconPath": "assets/order.png",
+        "selectedIconPath": "assets/order-active.png"
+      },
+      {
+        "pagePath": "pages/material/material",
+        "text": "材料",
+        "iconPath": "assets/manage.png",
+        "selectedIconPath": "assets/manage-active.png"
+      }
+    ]
+  }
+}

@@ -1,0 +1,47 @@
+<view class="container">
+  
+  <view class="banner">
+    <image src="/assets/coin1.png" ></image>
+  </view>
+  
+  <view class="menu">
+    <view class="menu-item" bindtap="goToQuotePage1">
+      <image src="/assets/quick_quote.png" mode="aspectFit"></image>
+      <text>快速报价</text>
+    </view>
+    <view class="menu-item" bindtap="goToQuotePage2">
+      <image src="/assets/order_query.png" mode="aspectFit"></image>
+      <text>订单查询</text>
+    </view>
+    <view class="menu-item" bindtap="goToQuotePage3">
+      <image src="/assets/material_manage.png" mode="aspectFit"></image>
+      <text>材料管理</text>
+    </view>
+    <view class="menu-item">
+      <image src="/assets/quick_search.png" mode="aspectFit"></image>
+      <text>快速搜索</text>
+    </view>
+  </view>
+
+  <view class="history">
+    <text class="history-title">历史报价</text>
+    <view class="table-header">
+      <text>型号</text>
+      <text>材质</text>
+      <text>开闭口</text>
+      <text>长度</text>
+      <text>数量</text>
+      <text>总价</text>
+    </view>
+    <block wx:for="{{quotes}}" wx:key="index">
+      <view class="table-row">
+        <text>{{item.model}}</text>
+        <text>{{item.material}}</text>
+        <text>{{item.openClose}}</text>
+        <text>{{item.length}}</text>
+        <text>{{item.quantity}}</text>
+        <text>{{item.price}}</text>
+      </view>
+    </block>
+  </view>
+</view>

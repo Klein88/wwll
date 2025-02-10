@@ -1,0 +1,83 @@
+<!-- 列表展示页面 -->
+<view class="container">
+  <!-- 顶部导航栏 -->
+  <!-- <view class="navbar">
+    <text class="navbar-title">材料管理</text>
+  </view> -->
+  <!-- 搜索框（暂时注释掉） -->
+  <!--
+  <view class="search-box">
+    <input placeholder="搜索材料信息" bindinput="onSearchInput" value="{{searchKeyword}}"/>
+    <button bindtap="onSearch">搜索</button>
+  </view>
+  -->
+  <!-- 材料列表 -->
+  <view class="material-list">
+    <!-- 表头直接嵌入筛选控件 -->
+    <view class="list-header">
+      <view class="header-item">
+        <picker mode="selector" range="{{modelOptions}}" value="{{modelPickerIndex}}" bindchange="onModelPickerChange">
+          <view class="picker-item">型号</view>
+        </picker>
+      </view>
+      <view class="header-item">
+        <picker mode="selector" range="{{nameOptions}}" value="{{namePickerIndex}}" bindchange="onNamePickerChange">
+          <view class="picker-item">名称</view>
+        </picker>
+      </view>
+      <view class="header-item">
+        <picker mode="selector" range="{{typeOptions}}" value="{{typePickerIndex}}" bindchange="onTypePickerChange">
+          <view class="picker-item">类型</view>
+        </picker>
+      </view>
+      <view class="header-item">
+        <text>价格</text>
+      </view>
+      <view class="header-item">
+        <text>操作</text>
+      </view>
+    </view>
+    <block wx:for="{{materials}}" wx:key="id">
+      <view class="list-item">
+        <text>{{item.model}}</text>
+        <text>{{item.name}}</text>
+        <text>{{item.type}}</text>
+        <text>{{item.rollPrice}} 元</text>
+        <view class="item-actions">
+          <button bindtap="onEdit" data-id="{{item.id}}">编辑</button>
+        </view>
+      </view>
+    </block>
+  </view>
+  <!-- 操作按钮区 -->
+  <view class="action-buttons">
+    <button bindtap="onAdd">新增</button>
+  </view>
+</view>
+
+<!-- 新增/编辑材料对话框 -->
+<view class="modal-mask" wx:if="{{isFormVisible}}">
+  <view class="modal-container">
+    <view class="modal-title">{{isEdit ? '编辑材料' : '新增材料'}}</view>
+    <view class="input-item">
+      <text class="input-label">型号 ID：</text>
+      <input placeholder="请输入型号 ID" bindinput="onModelIdInput" value="{{formData.modelId}}"/>
+    </view>
+    <view class="input-item">
+      <text class="input-label">材料名称：</text>
+      <input placeholder="请输入材料名称" bindinput="onNameInput" value="{{formData.name}}"/>
+    </view>
+    <view class="input-item">
+      <text class="input-label">类型 ID：</text>
+      <input placeholder="请输入类型 ID" bindinput="onTypeIdInput" value="{{formData.typeId}}"/>
+    </view>
+    <view class="input-item">
+      <text class="input-label">价格：</text>
+      <input placeholder="请输入价格" bindinput="onRollPriceInput" value="{{formData.rollPrice}}"/>
+    </view>
+    <view class="modal-buttons">
+      <button bindtap="onSubmit">提交</button>
+      <button bindtap="onCancel">取消</button>
+    </view>
+  </view>
+</view>

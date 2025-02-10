@@ -1,0 +1,71 @@
+<!--pages/order/order.wxml-->
+<view class="container">
+  <view class="history">
+    <view class="title-and-search">
+      <text class="history-title">历史订单</text>
+      <view class="search-area">
+        <input placeholder="请输入订单 ID" bindinput="onInputChange" value="{{searchId}}"/>
+        <button bindtap="searchOrder">搜索</button>
+      </view>
+    </view>
+    <view class="table-header">
+      <text>型号</text>
+      <text>材质</text>
+      <text>开闭口</text>
+      <text>长度</text>
+      <text>数量</text>
+      <text>总价</text>
+    </view>
+    <block wx:for="{{quotes}}" wx:key="index">
+      <view class="table-row" bindtap="showConfirmModal" data-index="{{index}}">
+        <text>{{item.model}}</text>
+        <text>{{item.material}}</text>
+        <text>{{item.openClose}}</text>
+        <text>{{item.length}}</text>
+        <text>{{item.quantity}}</text>
+        <text>{{item.price}}</text>
+      </view>
+    </block>
+    <!-- 加载更多按钮 -->
+    <button wx:if="{{hasNextPage}}" bindtap="loadMore">加载更多</button>
+  </view>
+
+  <!-- 搜索结果对话框 -->
+  <view class="modal-mask" wx:if="{{showModal}}">
+    <view class="modal-container">
+      <view class="modal-title">搜索结果</view>
+      <view class="table-header">
+        <text>型号</text>
+        <text>材质</text>
+        <text>开闭口</text>
+        <text>长度</text>
+        <text>数量</text>
+        <text>总价</text>
+      </view>
+      <view class="table-row">
+        <text>{{searchResult.model}}</text>
+        <text>{{searchResult.material}}</text>
+        <text>{{searchResult.openClose}}</text>
+        <text>{{searchResult.length}}</text>
+        <text>{{searchResult.quantity}}</text>
+        <text>{{searchResult.price}}</text>
+      </view>
+      <button bindtap="closeModal">关闭</button>
+    </view>
+  </view>
+
+  <!-- 确认对话框 -->
+  <view class="modal-mask" wx:if="{{showConfirmModal}}">
+    <view class="modal-container">
+      <view class="modal-title">提示</view>
+      <view class="modal-body">是否生成报价图片？</view>
+      <view class="modal-footer">
+        <button bindtap="cancelGenerateImage">取消</button>
+        <button bindtap="confirmGenerateImage">确定</button>
+      </view>
+    </view>
+  </view>
+
+  <!-- 用于绘制图片的 canvas -->
+  <canvas canvas-id="quoteCanvas" style="width: 300px; height: 300px; position: fixed; top: -1000px; left: -1000px;"></canvas>
+</view>

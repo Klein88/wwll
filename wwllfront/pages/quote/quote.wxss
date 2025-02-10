@@ -1,0 +1,185 @@
+/* 页面容器 */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: linear-gradient(#a1c4fd 0%, #c2e9fb 100%);
+  min-height: 100vh;
+  padding-bottom: 50rpx;
+  padding: 0;
+  margin: 0;  
+}
+
+/* 头部信息 */
+.header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40rpx 20rpx;
+}
+
+.header-left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  flex: 1;
+}
+
+.header-title {
+  font-size: 55rpx;
+  font-weight: bold;
+  color: #000000;
+}
+
+.sub-title {
+  font-size: 35rpx;
+  color: rgb(0, 0, 0);
+}
+
+.header-icon {
+  width: 330rpx;
+  height: 330rpx;
+  margin-left: 130rpx;
+}
+
+/* 计算选项 */
+.tab {
+  display: flex;
+  justify-content: space-around;
+  width: 90%;
+  background-color: #fff;
+  border-radius: 20rpx;
+  padding: 20rpx;
+  margin: -300rpx 0;
+}
+
+.tab-item {
+  font-size: 28rpx;
+  color: #999;
+}
+
+.tab-item.active {
+  font-weight: bold;
+  color: #448aff;
+  border-bottom: 4rpx solid #448aff;
+  padding-bottom: 10rpx;
+}
+
+/* 内容 */
+.content {
+  width: 90%;
+  background-color: #ffffff;
+  border-radius: 16rpx;
+  padding: 20rpx;
+  box-shadow: 0 4rpx 8rpx rgba(0, 0, 0, 0.1);
+  margin-top: 70rpx; /* 调整 content 与上方元素的间距，可按需修改 */
+}
+
+/* 行 */
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25rpx 0;
+  border-bottom: 1rpx solid #eee;
+  margin-top: 25rpx; /* 调整 content 与上方元素的间距，可按需修改 */
+}
+
+/* 标签 */
+.label {
+  font-size: 28rpx;
+}
+
+/* 选择器 */
+.value {
+  font-size: 28rpx;
+  color: #666;
+}
+
+/* 单选按钮行 */
+.radio-group {
+  display: flex;
+  align-items: center;
+  gap: 40rpx;
+}
+
+/* 单个单选按钮项 */
+.radio-item {
+  display: flex;
+  align-items: center;
+  gap: 10rpx;
+}
+
+.radio-item text {
+  font-size: 28rpx;
+  color: #333;
+}
+
+/* 计算按钮 */
+.calculate-btn {
+  width: 100%;
+  background: linear-gradient(to right, #448aff, #1e88e5);
+  color: white;
+  font-size: 32rpx;
+  text-align: center;
+  padding: 20rpx 0;
+  border-radius: 10rpx;
+  margin-top: 40rpx;
+}
+
+/* 计算结果弹出框 */
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  width: 80%;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  z-index: 99;
+}
+
+.modal-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.modal-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.modal-body text {
+  display: block;
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+.modal-footer {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 15px;
+}
+
+.modal-btn {
+  flex: 1;
+  margin: 5px;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.save {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.cancel {
+  background-color: #f44336;
+  color: white;
+}

@@ -1,0 +1,89 @@
+<view class="container">
+  <!-- 头部信息 -->
+  <view class="header">
+    <view class="header-left">
+      <text class="header-title">拉链计算器</text>
+      <text class="sub-title">快速计算</text>
+    </view>
+    <image class="header-icon" src="/assets/calculator.png"></image>
+  </view>
+
+  <!-- 计算选项 -->
+  <view class="tab">
+    <text class="tab-item active">简单计算</text>
+    <text class="tab-item">复杂计算</text>
+  </view>
+
+  <view class="content">
+    <!-- 型号选择 -->
+    <view class="row">
+      <text class="label">型号</text>
+      <picker mode="selector" value="{{selectedModelId}}" range="{{models}}" range-key="name" bindchange="pickerModelChange">
+        <text class="value">{{selectedModelName || '请选择型号'}}</text>
+      </picker>
+    </view>
+
+    <!-- 材质选择 -->
+    <view class="row">
+      <text class="label">材质</text>
+      <picker mode="selector" value="{{selectedMaterialId}}" range="{{materials}}" range-key="name" bindchange="pickerMaterialChange">
+        <text class="value">{{selectedMaterialName || '请选择材料'}}</text>
+      </picker>
+    </view>
+
+    <!-- 开闭口单选 -->
+    <view class="row">
+  <text class="label">开口/闭口</text>
+  <radio-group bindchange="radioOpenCloseChange">
+    <label class="radio" wx:for="{{openCloseTypes}}" wx:key="id">
+      <text class="radio-text">{{item.id === 1 ? '开口' : '闭口'}}</text>
+      <radio value="{{item.id}}" checked="{{selectedOpenCloseId === item.id}}" />
+      <text>{{item.name}}</text>
+    </label>
+  </radio-group>
+</view>
+    <!-- <view class="row">
+      <text class="label">开口/闭口</text>
+      <radio-group bindchange="radioOpenCloseChange">
+        <label class="radio" wx:for="{{openCloseTypes}}" wx:key="id">
+          <radio value="{{item.id}}" checked="{{selectedOpenCloseId === item.id}}" /> {{item.name}}
+          <text>{{item.name}}</text>
+        </label>
+      </radio-group>
+    </view> -->
+
+    <!-- 长度输入 -->
+    <view class="row">
+      <text class="label">长度 (cm)</text>
+      <input type="number" value="{{length}}" placeholder="请输入长度" bindinput="inputLength" />
+    </view>
+
+    <!-- 数量输入 -->
+    <view class="row">
+      <text class="label">数量</text>
+      <input type="number" value="{{quantity}}" placeholder="请输入数量" bindinput="inputQuantity" />
+    </view>
+
+    <!-- 利润输入 -->
+    <view class="row">
+      <text class="label">利润率 (%)</text>
+      <input type="number" value="{{profitRate}}" placeholder="请输入利润率" bindinput="inputProfitRate" />
+    </view>
+
+    <!-- 计算按钮 -->
+    <button class="calculate-btn" bindtap="calculateQuote">开始计算</button>
+    <view wx:if="{{showModal}}" class="modal">
+      <view class="modal-content">
+        <text class="modal-title">计算结果</text>
+        <view class="modal-body">
+          <text>总价: ￥{{result.totalPrice}}</text>
+          <text>单价: ￥{{result.unitPrice}}</text>
+        </view>
+        <view class="modal-footer">
+          <button class="modal-btn save" bindtap="saveQuote">确定</button>
+          <button class="modal-btn cancel" bindtap="closeModal">取消</button>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

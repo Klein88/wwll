@@ -1,0 +1,202 @@
+/* 全局容器 */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #f8f8f8;
+  min-height: 90vh;
+  padding: 0;  /* 确保没有多余的 padding */
+  margin: 0;  
+}
+
+.header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10rpx 20rpx;
+  background-color: #e0ecff;
+}
+
+.icons {
+  display: flex;
+}
+
+.icon-btn {
+  margin-left: 10rpx;
+  background: none;
+  border: none;
+  font-size: 32rpx;
+}
+
+/* 轮播图（可以调整图片大小） */
+.banner {
+  width: 100%;
+  height: 420rpx; /* 这里调整高度 */
+  /* background-color: #add8e6; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 16rpx;
+  overflow: hidden;
+  margin: 20rpx 0;
+}
+
+.banner-image {
+  width: 100%; /* 这里调整宽度 */
+  height: 100%; /* 这里调整高度 */
+}
+
+/* 菜单 */
+.menu {
+  display: flex;
+  justify-content: space-between;
+  width: 95%;
+  margin: 20rpx 0;
+}
+
+.menu-item {
+  display: flex;
+  flex-direction: column;      /* 图片和文字垂直排列 */
+  align-items: center;         /* 水平居中 */
+  justify-content: center;     /* 垂直居中 */
+  width: 150rpx;               /* 确保每个菜单项的宽度 */
+  height: 150rpx;              /* 确保每个菜单项的高度 */
+  /* cursor: pointer;            鼠标指针提示 */
+  text-align: center;          /* 文字水平居中 */
+}
+
+.menu-item image {
+  width: 120rpx;                /* 设置图标宽度 */
+  height: 120rpx;               /* 设置图标高度 */
+}
+
+.menu-item text {
+  font-size: 25rpx;            /* 调整文字大小 */
+  margin-top: 8rpx;            /* 调整文字与图片之间的距离 */
+}
+
+/* 历史报价 */
+.history {
+  width: 90%;
+  background-color: #ffffff;
+  border-radius: 16rpx;
+  padding: 30rpx;
+  box-shadow: 0 4rpx 8rpx rgba(0, 0, 0, 0.1);
+}
+
+.history-title {
+  font-size: 40rpx;
+  font-weight: bold;
+  margin-bottom: 60rpx;
+  margin-left: 20rpx;
+}
+
+/* 表头和表格内容行 */
+.table-header,
+.table-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 20rpx 30rpx; /* 增加内边距 */
+  border-bottom: 1rpx solid #eee;
+  margin-top: 10rpx;
+}
+
+.table-header {
+  background-color: #f0f0f0; /* 为表头添加背景颜色 */
+}
+
+.table-header text,
+.table-row text {
+  font-size: 30rpx;
+  text-align: left; /* 让文字右对齐，特别是数字列 */
+}
+
+/* 表头加粗 */
+.table-header text {
+  font-weight: bold;
+}
+
+/* 样式：每列的宽度 */
+.table-header text:nth-child(1),
+.table-row text:nth-child(1) {
+  width: 120rpx;  /* 型号列宽度 */
+}
+
+.table-header text:nth-child(2),
+.table-row text:nth-child(2) {
+  width: 150rpx;  /* 材质列宽度 */
+}
+
+.table-header text:nth-child(3),
+.table-row text:nth-child(3) {
+  width: 180rpx;  /* 开闭口列宽度 */
+}
+
+.table-header text:nth-child(4),
+.table-row text:nth-child(4) {
+  width: 200rpx;  /* 长度列宽度 */
+}
+
+.table-header text:nth-child(5),
+.table-row text:nth-child(5) {
+  width: 180rpx;  /* 数量列宽度 */
+}
+
+.table-header text:nth-child(6),
+.table-row text:nth-child(6) {
+  width: 220rpx;  /* 单价列宽度 */
+}
+
+.table-header text:nth-child(7),
+.table-row text:nth-child(7) {
+  width: 250rpx;  /* 创建时间列宽度 */
+}
+
+/* 表格行：数字格式化 */
+.table-row text {
+  font-size: 28rpx;
+  text-align: left; /* 确保数字右对齐 */
+}
+
+/* 设置表格行颜色，交替背景色 */
+.table-row:nth-child(odd) {
+  background-color: #f9f9f9; /* 奇数行背景 */
+}
+
+.table-row:nth-child(even) {
+  background-color: #ffffff; /* 偶数行背景 */
+}
+
+/* 底部导航 */
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  background-color: #ffffff;
+  border-top: 1rpx solid #eee;
+  padding: 10rpx 0;
+}
+
+/* 底部导航图标（可以修改大小） */
+.footer-icon {
+  width: 40rpx; /* 这里调整宽度 */
+  height: 40rpx; /* 这里调整高度 */
+}
+
+.footer-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footer-item text {
+  font-size: 24rpx;
+}
+
+.footer-item.active text {
+  color: #448aff;
+  font-weight: bold;
+}
